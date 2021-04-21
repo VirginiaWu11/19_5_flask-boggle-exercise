@@ -6,3 +6,16 @@
   text-align: center;
   background-color: lightcyan;
 }
+
+.msg {
+  padding: 1em;
+}
+
+.msg.ok {
+  color: white;
+  background-color: green;
+}
+.msg.error {
+  color: white;
+  background-color: red;
+}

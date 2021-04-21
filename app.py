@@ -20,3 +20,13 @@ def homepage():
     board = boggle_game.make_board()
     session['board']=board
     return render_template('index.html',board=board)
+
+@app.route("/check-guess")
+def check_guess():
+    """Check if guessed word is both on the board and in our dictionary, return json to frontend AJAX call"""
+    guess = request.args["guess"]
+    board = session["board"]
+    response = boggle_game.check_valid_word(board, guess)
+
+    return jsonify({'result':response})
+    # {'result': "ok", "not-on-board", or "not-word}"

@@ -20,9 +20,17 @@
         {% endfor %}
       </tbody>
     </table>
-    <form action="">
-      <input type="text" placeholder="guess" name="guess" id="guess" />
+
+    <form id="add-word">
+      <input type="text" placeholder="guess" id="guess" />
       <button>Submit</button>
     </form>
+    <p class="msg">
+      placeholdder
+      <!-- JS function showMessage will add message here according to user input -->
+    </p>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="http://unpkg.com/axios/dist/axios.js"></script>
+    <script src="/static/script.js"></script>
   </body>
 </html>
