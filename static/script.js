@@ -1,8 +1,13 @@
 words = [];
+score = 0;
 
 function showMessage(msg, cls) {
   // show message on html
   $(".msg").text(msg).removeClass().addClass(`msg ${cls}`);
+}
+
+function updateScore() {
+  $(".score").text(score);
 }
 
 $("#add-word").on("submit", handleSubmit);
@@ -28,6 +33,8 @@ async function handleSubmit(evt) {
     );
   } else {
     showMessage(`${guess.toUpperCase()} scored ${guess.length} points!`, "ok");
+    score += guess.length;
+    updateScore();
   }
   $("#guess").val("");
 }
