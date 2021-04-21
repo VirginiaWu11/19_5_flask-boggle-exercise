@@ -1,6 +1,6 @@
 words = [];
 score = 0;
-
+secs = 5;
 function showMessage(msg, cls) {
   // show message on html
   $(".msg").text(msg).removeClass().addClass(`msg ${cls}`);
@@ -38,3 +38,20 @@ async function handleSubmit(evt) {
   }
   $("#guess").val("");
 }
+
+function showTimer() {
+  $(".timer").text(secs);
+}
+
+function timer() {
+  let time = setInterval(function () {
+    secs -= 1;
+    showTimer();
+    if (secs === 0) {
+      clearInterval(time);
+      $("#add-word").hide();
+    }
+  }, 1000);
+}
+
+timer();
