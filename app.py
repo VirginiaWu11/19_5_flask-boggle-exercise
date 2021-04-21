@@ -12,8 +12,11 @@ debug = DebugToolbarExtension(app)
 from boggle import Boggle
 
 boggle_game = Boggle()
-board = boggle_game.make_board()
+
 
 @app.route('/')
-def home_page():
-    return render_template('index.html')
+def homepage():
+
+    board = boggle_game.make_board()
+    session['board']=board
+    return render_template('index.html',board=board)

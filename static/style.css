@@ -1,0 +1,8 @@
+#board tbody td {
+  table-layout: fixed;
+  height: 50px;
+  width: 50px;
+  border: solid 1px black;
+  text-align: center;
+  background-color: lightcyan;
+}
