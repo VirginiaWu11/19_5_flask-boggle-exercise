@@ -33,6 +33,7 @@ def check_guess():
 
 @app.route("/post-score", methods = ["POST"])
 def post_score():
+    """Update number of times played and highscore if necessary. Send json back to frontend to relay whether the most recent game broke the record"""
     score = request.json['score']
     highscore = session.get("highscore", 0)
     n_plays = session.get("n_plays",0)
